@@ -37,118 +37,28 @@
             </ul>
         </nav>
     </header>
+    <!-- ./Header Section -->
+
+    <!-- Search Section -->
     <section class="container">
         <form action="">
             <div class="food-item-search">
                 <div class="item-search-group">
-                    <input type="text" name="keyword" id="keyword" placeholder="Search for Meal..">
-                    <button type="submit" id="item-search" class="item-search-btn">Search</button>
+                    <input type="text" name="keyword" id="input-item" placeholder="Search for Meal..">
+                    <button onclick="foodSearch()" type="button" id="item-search-btn" class="item-search-btn">Search</button>
                 </div>
             </div>
         </form>
     </section>
+    <!-- ./Search Section -->
 
+    <!-- Food Section -->
     <section class="container food-section">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="item">
-                    <div class="food-image">
-                        <a href="#">
-                            <img src="images/img-1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="item-name">
-                        <a href="#">
-                            <h4>Vegan salad bowl</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="item">
-                    <div class="food-image">
-                        <a href="#">
-                            <img src="images/img-1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="item-name">
-                        <a href="#">
-                            <h4>Vegan salad bowl</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="item">
-                    <div class="food-image">
-                        <a href="#">
-                            <img src="images/img-1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="item-name">
-                        <a href="#">
-                            <h4>Vegan salad bowl</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="item">
-                    <div class="food-image">
-                        <a href="#">
-                            <img src="images/img-1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="item-name">
-                        <a href="#">
-                            <h4>Vegan salad bowl</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- For next page -->
-        <div class="food">
-            <div class="col-lg-6">
-                <div class="item">
-                    <div class="food-image">
-                        <a href="#">
-                            <img src="images/img-1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="food-name">
-                        <a href="#">
-                            <h2>Cegan salad bowl</h4>
-                        </a>
-                        <div class="ingredients">
-                            <h3>Ingredients</h5>
-                            <ul>
-                                <li>
-                                    <input type="checkbox">
-                                    <span class="check-item">1 tbsp olive oil</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox">
-                                    <span class="check-item">1 onion, finely chopped</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox">
-                                    <span class="check-item">tbsp olive oil</span>
-                                </li>
-                                <li>
-                                    <input type="checkbox">
-                                    <span class="check-item">1 onion, finely chopped</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="foods">
+           
         </div>
     </section>
+    <!-- ./Food Section -->
 
     <!-- JS -->
     <script src="js/main.js"></script>

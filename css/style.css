@@ -110,7 +110,7 @@ input{
     color: #272238;
 }
 .food-image{
-    margin: -3px 0px;
+    margin: -4px 0px;
 }
 
 /* For next page */
@@ -142,6 +142,7 @@ input{
 }
 .ingredients{
     padding-left: 1.5rem;
+    position: relative;
 }
 .ingredients ul{
     list-style-type: none;
@@ -149,11 +150,12 @@ input{
 .ingredients input{
     min-width: 0;
 }
-.ingredients input:checked{
-    background-color: red;
-}
 .ingredients ul li{
     margin-bottom: 10px;
+}
+.ingredients input,
+.ingredients label{
+    cursor: pointer;
 }
 .ingredients h3{
     padding-left: 5px;
