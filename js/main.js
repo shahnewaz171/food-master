@@ -14,8 +14,8 @@ function foodSearch(){
 const displayFood = foods =>{
      const foodsMainInfo = document.getElementById('foods');
      for (let i = 0; i < foods.meals.length; i++) {
-         const element = foods.meals[i].strMeal;
-         console.log(element);
+         const food  = foods.meals[i];
+        //  console.log(food);
 
         const colDiv = document.createElement('div');
         colDiv.className = 'col-lg-3';
