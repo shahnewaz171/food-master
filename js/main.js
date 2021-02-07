@@ -8,7 +8,7 @@ function foodSearch(){
         displayFood(data);
         console.log(data);
     })
-    .catch(err => alert("Please enter the correct Food name"));
+    .catch(err => alert("Please enter the correct food name"));
 }
 
 
@@ -81,7 +81,7 @@ const renderFoodInfo = food => {
             <ul>
                 <li>
                     <input type="checkbox" id="item1" checked="checked">
-                    <label for="item1" class="check-item">${food.strIngredient1}</label>
+                    <label for="item1" class="check-item">${food.strMeasure1+ ' ' +food.strIngredient1}</label>
                 </li>
             </ul>
         </div>
