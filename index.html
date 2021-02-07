@@ -44,8 +44,11 @@
         <form action="">
             <div class="food-item-search">
                 <div class="item-search-group">
-                    <input type="text" name="keyword" id="input-item" placeholder="Search for Meal.." onfocus="this.value=''">
-                    <button onclick="foodSearch()" type="button" id="item-search-btn" class="item-search-btn">Search</button>
+                    <div class="search-option">
+                        <input type="text" name="keyword" id="input-item" placeholder="Search for Meal..">
+                        <i class="fas fa-search search-icon"></i>
+                        <button onclick="foodSearch()" type="button" id="item-search-btn" class="item-search-btn">Search</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -56,7 +59,7 @@
     <div id="food-details">
 
     </div>
-    <!-- Food items details -->
+    <!-- ./Food items details -->
 
     <!-- Food Main Section -->
     <section class="container food-section">

@@ -1,7 +1,6 @@
 //API connect from search box
 function foodSearch(){
     const inputItem = document.getElementById('input-item').value;
-    
     async function foodSearchResult(){
         const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+inputItem);
         const data = await response.json();
@@ -10,7 +9,7 @@ function foodSearch(){
     foodSearchResult().then(data => {
         displayFoods(data);
     })
-    .catch(err => alert("Please enter the correct food name"));
+    .catch(err => alert('Please enter the valid food name'));
 }
 
 //Create food items list using forEach and arrow method with validation
@@ -90,12 +89,40 @@ const renderFoodInfo = food => {
                     <label for="item1" class="check-item">${food.strMeasure1+ ' ' +food.strIngredient1}</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="item1" checked="checked">
-                    <label for="item1" class="check-item">${food.strMeasure2+ ' ' +food.strIngredient2}</label>
+                    <input type="checkbox" id="item2" checked="checked">
+                    <label for="item2" class="check-item">${food.strMeasure2+ ' ' +food.strIngredient2}</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="item1" checked="checked">
-                    <label for="item1" class="check-item">${food.strMeasure3+ ' ' +food.strIngredient3}</label>
+                    <input type="checkbox" id="item3" checked="checked">
+                    <label for="item3" class="check-item">${food.strMeasure3+ ' ' +food.strIngredient3}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item4" checked="checked">
+                    <label for="item4" class="check-item">${food.strMeasure4+ ' ' +food.strIngredient4}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item5" checked="checked">
+                    <label for="item5" class="check-item">${food.strMeasure5+ ' ' +food.strIngredient5}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item6" checked="checked">
+                    <label for="item6" class="check-item">${food.strMeasure6+ ' ' +food.strIngredient6}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item7" checked="checked">
+                    <label for="item7" class="check-item">${food.strMeasure7+ ' ' +food.strIngredient7}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item8" checked="checked">
+                    <label for="item8" class="check-item">${food.strMeasure8+ ' ' +food.strIngredient8}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item9" checked="checked">
+                    <label for="item9" class="check-item">${food.strMeasure9+ ' ' +food.strIngredient9}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item10" checked="checked">
+                    <label for="item10" class="check-item">${food.strMeasure10+ ' ' +food.strIngredient10}</label>
                 </li>
             </ul>
         </div>
