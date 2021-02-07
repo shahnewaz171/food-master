@@ -100,6 +100,7 @@ input{
     background-color: white;
     padding: 1px;
     text-align: center;
+    height: 80px;
 }
 .item-name a{
     text-decoration: none;
@@ -114,14 +115,19 @@ input{
 }
 
 /* For next page */
-.food{
+#food-details{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
 }
 .col-lg-6{
     flex: 0 0 25%;
-    max-width: 50%;
+    max-width: 35%;
+}
+.food-img{
+    width: 100%;
+    height: 15rem;
 }
 .food-name{
     background-color: white;
