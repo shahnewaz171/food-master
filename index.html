@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cooking Master</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
-     <!-- Font Awesome -->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -21,7 +22,7 @@
                     <img src="images/logo.png" alt="" width="200">
                 </a>
             </div>
-            <ul>
+            <ul class="main-nav">
                 <li>
                     <a href="#">Home</a>
                 </li>
@@ -35,6 +36,20 @@
                     <a href="#">Blog</a>
                 </li>
             </ul>
+            <!-- Small Device NavBar -->
+            <div class="mobile-menu">
+                <span onclick="openNav()">&#9776;</span>
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void()" onclick="closeNav()" class="closeBtn">&times;</a>
+                    <div class="overlay-content">
+                        <a onclick="closeNav()" href="#">Home</a>
+                        <a onclick="closeNav()" href="#">Recipes</a>
+                        <a onclick="closeNav()" href="#">About</a>
+                        <a onclick="closeNav()" href="#">Blog</a>
+                    </div>
+                </div>
+            </div>
+            <!--/. Small Device NavBar -->
         </nav>
     </header>
     <!-- ./Header Section -->

@@ -1,0 +1,71 @@
+@media only screen and (min-width: 992px){
+    .navbar-nav ul {
+        list-style-type: none;
+        display: flex;
+        margin-left: 31rem;
+    }
+}
+@media only screen and (max-width: 991px){
+    .mobile-menu span{
+        display: block;
+        font-size: 45px;
+        margin-top: 4px
+    }
+    .main-nav{
+        display:none ;
+    }
+}
+@media only screen and (max-width: 491px){
+    input{
+        min-width: 0;
+    }
+    .search-icon{
+        margin-left: -14rem;
+    }
+}
+@media only screen and (max-width: 440px){
+    .overlay .closeBtn {
+        right: 1.5rem;
+    }
+    .mobile-menu span{
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width: 357px){
+    .logo img{
+        width: 65%;
+    }
+    .mobile-menu span {
+        font-size: 32px;
+    }
+    .item-search-group button{
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 991px){
+    .col-lg-3{
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+    }
+    .col-lg-6 {
+        flex: 0 0 78%;
+        max-width: 78%;
+    }
+}
+@media only screen and (min-width: 492px) and (max-width: 583px){
+    .item-search-group button{
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 575px){
+    .col-lg-3{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-lg-6 {
+        flex: 0 0 78%;
+        max-width: 78%;
+    }
+}
