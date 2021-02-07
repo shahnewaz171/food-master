@@ -120,6 +120,9 @@ input{
     text-decoration: none;
     color: #3e1cac;
 }
+.item-name h4{
+    padding: 0px 2px;
+}
 .food-image{
     margin: -4px 0px;
 }

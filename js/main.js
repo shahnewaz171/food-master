@@ -1,15 +1,21 @@
-//API connect from search box
+//API connect from search box with validation
 function foodSearch(){
     const inputItem = document.getElementById('input-item').value;
+
     async function foodSearchResult(){
         const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+inputItem);
         const data = await response.json();
         return data;
     }
-    foodSearchResult().then(data => {
-        displayFoods(data);
-    })
-    .catch(err => alert('Please enter the valid food name'));
+    if(inputItem == ""){
+        alert('Please enter the food name');
+    }
+    else{
+        foodSearchResult().then(data => {
+            displayFoods(data);
+        })
+        .catch(err => alert('Please enter the valid food name'));
+    }
 }
 
 //Create food items list using forEach and arrow method with validation
