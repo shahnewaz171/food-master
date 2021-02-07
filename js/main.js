@@ -1,4 +1,4 @@
-//Another
+//API connect from search box
 function foodSearch(){
     const inputItem = document.getElementById('input-item').value;
     
@@ -13,6 +13,7 @@ function foodSearch(){
     .catch(err => alert("Please enter the correct food name"));
 }
 
+//Create food items list using forEach and arrow method with validation
 const displayFoods = foodItems =>{
     console.log(foodItems);
     const foodsMainInfo = document.getElementById('foods');
@@ -51,10 +52,7 @@ const displayFoods = foodItems =>{
 };
 
 
-
-
-
-
+//Showing all information of food after click a food item with validation
 const displayFoodDetails = mealName =>{
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`;
     fetch(url)
@@ -110,7 +108,7 @@ const renderFoodInfo = food => {
     foodDiv.appendChild(colDiv);
 };
 
-//Clear previous food item
+//Clear previous search item
 const cleanPreviousInfo = details => {
     const FoodDetails = document.getElementById(details);
     FoodDetails.innerHTML = "";
