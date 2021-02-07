@@ -20,13 +20,11 @@ function foodSearch(){
 
 //Create food items list using forEach and arrow method with validation
 const displayFoods = foodItems =>{
-    console.log(foodItems);
     const foodsMainInfo = document.getElementById('foods');
     cleanPreviousInfo('foods');
     cleanPreviousInfo('food-details');
 
     foodItems.meals.forEach(food => {
-        console.log(food);
         const colDiv = document.createElement('div');
         colDiv.className = 'col-lg-3';
         const itemDiv = document.createElement('div');
