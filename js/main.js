@@ -2,21 +2,25 @@
 function foodSearch(){
     const inputItem = document.getElementById('input-item').value;
     
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+inputItem)
-    .then(Response => Response.json())
-    .then(data => {
+    async function foodSearchResult(){
+        const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+inputItem);
+        const data = await response.json();
+        return data;
+    }
+    foodSearchResult().then(data => {
         displayFood(data);
-        console.log(data);
     })
     .catch(err => alert("Please enter the correct food name"));
 }
 
-
 const displayFood = foods =>{
-     const foodsMainInfo = document.getElementById('foods');
-     for (let i = 0; i < foods.meals.length; i++) {
-         const food  = foods.meals[i];
-         console.log(food);
+    const foodsMainInfo = document.getElementById('foods');
+    cleanPreviousInfo('foods');
+    cleanPreviousInfo('food-details');
+
+    for (let i = 0; i < foods.meals.length; i++) {
+        const food  = foods.meals[i];
+        console.log(food);
 
         const colDiv = document.createElement('div');
         colDiv.className = 'col-lg-3';
@@ -43,20 +47,22 @@ const displayFood = foods =>{
         itemDiv.appendChild(itemNameDiv);
         colDiv.appendChild(itemDiv);
         foodsMainInfo.appendChild(colDiv);
-     }
+    }
+    document.getElementById('input-item').value = '';
 };
 
-const displayFoodDetails = strMeal =>{
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${strMeal}`;
+
+
+const displayFoodDetails = mealName =>{
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`;
     fetch(url)
     .then(res => res.json())
-    // .then(data => console.log(data[0].name));
     .then(data => renderFoodInfo(data.meals[0]));
 };
 
 const renderFoodInfo = food => {
-    console.log(food);
     const foodDiv = document.getElementById('food-details');
+    cleanPreviousInfo('food-details');
 
     const colDiv = document.createElement('div');
     colDiv.className = 'col-lg-6';
@@ -78,10 +84,18 @@ const renderFoodInfo = food => {
         </a>
         <div class="ingredients">
             <h3>Ingredients</h5>
-            <ul>
-                <li>
+            <ul id="ingredients-list">
+                <li class="listItem">
                     <input type="checkbox" id="item1" checked="checked">
                     <label for="item1" class="check-item">${food.strMeasure1+ ' ' +food.strIngredient1}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item1" checked="checked">
+                    <label for="item1" class="check-item">${food.strMeasure2+ ' ' +food.strIngredient2}</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item1" checked="checked">
+                    <label for="item1" class="check-item">${food.strMeasure3+ ' ' +food.strIngredient3}</label>
                 </li>
             </ul>
         </div>
@@ -94,53 +108,8 @@ const renderFoodInfo = food => {
     foodDiv.appendChild(colDiv);
 };
 
-
-
-
-
-//Use for loop
-// function foodSearch(){
-//     const inputItem = document.getElementById('input-item').value;
-    
-//     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+inputItem)
-//     .then(Response => Response.json())
-//     .then(data => {
-//         displayFood(data);
-//     })
-//     .catch(err => alert("Please enter the correct Food name"));
-// }
-
-
-// const displayFood = foods =>{
-//      const foodsMainInfo = document.getElementById('foods');
-//      for (let i = 0; i < foods.meals.length; i++) {
-//          const food  = foods.meals[i];
-//         //  console.log(food);
-
-//         const colDiv = document.createElement('div');
-//         colDiv.className = 'col-lg-3';
-//         const itemDiv = document.createElement('div');
-//         itemDiv.className = 'item';
-//         const foodImageDiv = document.createElement('div');
-//         foodImageDiv.className = 'food-image';
-//         const itemNameDiv = document.createElement('div');
-//         itemNameDiv.className = 'item-name';
-
-//         const foodImageInfo = `
-//             <a href="#">
-//                 <img src="${food.strMealThumb}" class="img-fluid">
-//             </a>
-//         `;
-//         const foodNameInfo = `
-//             <a href="#">
-//                 <h4 id="food-name">${food.strMeal}</h4>
-//             </a>
-//         `;
-//         foodImageDiv.innerHTML = foodImageInfo;
-//         itemDiv.appendChild(foodImageDiv);
-//         itemNameDiv.innerHTML = foodNameInfo;
-//         itemDiv.appendChild(itemNameDiv);
-//         colDiv.appendChild(itemDiv);
-//         foodsMainInfo.appendChild(colDiv);
-//      }
-// };
+//Clear previous food item
+const cleanPreviousInfo = details => {
+    const FoodDetails = document.getElementById(details);
+    FoodDetails.innerHTML = "";
+};
