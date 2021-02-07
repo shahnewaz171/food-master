@@ -8,20 +8,19 @@ function foodSearch(){
         return data;
     }
     foodSearchResult().then(data => {
-        displayFood(data);
+        displayFoods(data);
     })
     .catch(err => alert("Please enter the correct food name"));
 }
 
-const displayFood = foods =>{
+const displayFoods = foodItems =>{
+    console.log(foodItems);
     const foodsMainInfo = document.getElementById('foods');
     cleanPreviousInfo('foods');
     cleanPreviousInfo('food-details');
 
-    for (let i = 0; i < foods.meals.length; i++) {
-        const food  = foods.meals[i];
+    foodItems.meals.forEach(food => {
         console.log(food);
-
         const colDiv = document.createElement('div');
         colDiv.className = 'col-lg-3';
         const itemDiv = document.createElement('div');
@@ -47,9 +46,12 @@ const displayFood = foods =>{
         itemDiv.appendChild(itemNameDiv);
         colDiv.appendChild(itemDiv);
         foodsMainInfo.appendChild(colDiv);
-    }
-    document.getElementById('input-item').value = '';
+    });
+    document.getElementById('input-item').value = "";
 };
+
+
+
 
 
 
